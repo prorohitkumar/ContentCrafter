@@ -220,7 +220,9 @@ function ITComponent(props) {
           // Make POST request to backend
           setIsRedirect(true)
           setIsAnsReady(false);
-          const response = await axios.post('http://localhost:8085/api/v1/ai/createAssessment', payload);
+          // const response = await axios.post('http://localhost:8085/api/v1/ai/createAssessment', payload);
+          const response = await axios.post('https://mentormate-server-black-sound-2178.fly.dev/api/v1/ai/createAssessment', payload);
+
           setIsRedirect(false)
           setIsAnsReady(true)
           setResp(response.data.answer);
