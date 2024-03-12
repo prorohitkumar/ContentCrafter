@@ -239,7 +239,7 @@ function ITComponent(props) {
 
           setIsRedirect(false)
           setIsAnsReady(true)
-          console.log(response.data)
+          console.log(response)
           setResp(response.data.answer);
           try {
             const quizDataa = parseResponseString(response.data.answer);
