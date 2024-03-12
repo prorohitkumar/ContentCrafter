@@ -43,8 +43,8 @@ function ITComponent(props) {
   }, [formData]);
 
 
-    
-  
+
+
   const parseResponseString = (responseString) => {
     const questions = responseString.split('**Question');
 
@@ -55,7 +55,7 @@ function ITComponent(props) {
       const [questionWithCode, answerText] = question.split('**Answer:');
 
       const [questionText, codeSnippet] = questionWithCode.split('```');
-      
+
 
       const optionsAndCode = questionText.split('\n').filter((line) => line.trim() !== '');
       const questionWithoutCode = optionsAndCode[0];
@@ -65,19 +65,20 @@ function ITComponent(props) {
       const extractOptions = (question) => {
         const optionRegex = /[A-D]\.\s*(.*)/g;
         let match;
-    
+
         while ((match = optionRegex.exec(question)) !== null) {
           optionss.push(match[1]);
-        }}
-      if(codeSnippet!=null){
+        }
+      }
+      if (codeSnippet != null) {
         extractOptions(question)
-        options[1]=optionss[0];
-        options[2]=optionss[1];
-        options[3]=optionss[2];
-        options[4]=optionss[3];
+        options[1] = optionss[0];
+        options[2] = optionss[1];
+        options[3] = optionss[2];
+        options[4] = optionss[3];
 
       }
-        
+
 
       const answer = answerText.trim();
 
@@ -89,7 +90,7 @@ function ITComponent(props) {
       };
     });
   };
-  
+
 
   const programmingLanguages = data.Sectors[0].ProgrammingLanguages;
   const concepts = data.Sectors[0].concepts;
@@ -221,22 +222,26 @@ function ITComponent(props) {
           setIsRedirect(true)
           setIsAnsReady(false);
           // const response = await axios.post('http://localhost:8085/api/v1/ai/createAssessment', payload);
-          const response = await axios.post('https://mentormate-server-black-sound-2178.fly.dev/api/v1/ai/createAssessment', payload);
+          const response = await axios.post('https://mentormate-server-black-sound-2178.fly.dev/api/v1/ai/createAssessment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
 
           setIsRedirect(false)
           setIsAnsReady(true)
           setResp(response.data.answer);
-          try{
-          const quizDataa = parseResponseString(response.data.answer);
-          // const quizDataa = parseQuizData(response.data.answer);
+          try {
+            const quizDataa = parseResponseString(response.data.answer);
+            // const quizDataa = parseQuizData(response.data.answer);
 
-          setQuizData(quizDataa);
-          setIsRedirect(false)
-          } catch(error){
+            setQuizData(quizDataa);
+            setIsRedirect(false)
+          } catch (error) {
             toast.error("Oh no, something went wrong!");
             setIsRedirect(false)
-          setIsRedirect(false)
-          setIsAnsReady(false)
+            setIsRedirect(false)
+            setIsAnsReady(false)
           }
 
 
@@ -274,10 +279,10 @@ function ITComponent(props) {
         const formattedItem = {};
         // Clean options and add them as separate columns
         item.options.forEach((option, index) => {
-          if(item.codeSnippet==null){
-          formattedItem[`option${index + 1}`] = index === 0 ? option : option.substring(2); // Trim first two characters
+          if (item.codeSnippet == null) {
+            formattedItem[`option${index + 1}`] = index === 0 ? option : option.substring(2); // Trim first two characters
           }
-          else{
+          else {
             formattedItem[`option${index + 1}`] = index === 0 ? option : option; // Trim first two characters
 
           }
@@ -310,7 +315,7 @@ function ITComponent(props) {
       const formattedDataa = formattedData.map(item => {
         return {
           Question: item.option1,
-          codeSnippet:item.codeSnippet,
+          codeSnippet: item.codeSnippet,
           A: item.option2,
           B: item.option3,
           C: item.option4,
@@ -336,8 +341,8 @@ function ITComponent(props) {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = props.assessmentName+'.xlsx';
-      
+      a.download = props.assessmentName + '.xlsx';
+
       // Trigger download
       document.body.appendChild(a);
       a.click();
@@ -426,13 +431,13 @@ function ITComponent(props) {
             </div>
             <div className="sub-btn">
               <button className='generate-btn' type="submit">Generate</button>
-              { isAnsReady ? <button type='button' className='download-btn' onClick={downloadExcel}>Download</button>:<></>}
+              {isAnsReady ? <button type='button' className='download-btn' onClick={downloadExcel}>Download</button> : <></>}
 
             </div>
           </div>
         </form>
       </div>
-      {isRedirect & !isAnsReady?
+      {isRedirect & !isAnsReady ?
         <Spinner /> : <> {isAnsReady ?
           <div className='output'>
             {/* <h2>Response Data</h2> */}
@@ -442,7 +447,7 @@ function ITComponent(props) {
             </div>
           </div> : <></>}
         </>}
-        <ToastContainer /> 
+      <ToastContainer />
 
     </>
   );
