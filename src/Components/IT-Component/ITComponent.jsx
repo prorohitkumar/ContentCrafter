@@ -221,12 +221,21 @@ function ITComponent(props) {
           // Make POST request to backend
           setIsRedirect(true)
           setIsAnsReady(false);
+
+          const response = await fetch(
+            'https://mentormate-server-black-sound-2178.fly.dev/api/v1/ai/createAssessment',
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            }
+          );
           // const response = await axios.post('http://localhost:8085/api/v1/ai/createAssessment', payload);
-          const response = await axios.post('https://mentormate-server-black-sound-2178.fly.dev/api/v1/ai/createAssessment', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
+          // const response = await axios.post('https://mentormate-server-black-sound-2178.fly.dev/api/v1/ai/createAssessment', {
+          //   method: 'POST',
+          //   headers: { 'Content-Type': 'application/json' },
+          //   body: JSON.stringify(payload),
+          // });
 
           setIsRedirect(false)
           setIsAnsReady(true)
