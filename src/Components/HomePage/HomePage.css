@@ -12,8 +12,8 @@
 /* Reduce size of carousel control buttons */
 .carousel-control-prev, .carousel-control-next {
   font-size: 1rem; /* Adjust as needed */
-  width: 30px; /* Adjust width */
-  height: 30px; /* Adjust height */
+  width: 80px; /* Adjust width */
+  height: 40px; /* Adjust height */
 }
 
 /* Optional: Adjust position of control buttons */
