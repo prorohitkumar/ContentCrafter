@@ -9,3 +9,18 @@
   margin-top:270px ;
 } */
 
+/* Reduce size of carousel control buttons */
+.carousel-control-prev, .carousel-control-next {
+  font-size: 1rem; /* Adjust as needed */
+  width: 30px; /* Adjust width */
+  height: 30px; /* Adjust height */
+}
+
+/* Optional: Adjust position of control buttons */
+.carousel-control-prev {
+  left: -30px; /* Adjust left position */
+}
+
+.carousel-control-next {
+  right: -30px; /* Adjust right position */
+}
