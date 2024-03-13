@@ -1,11 +1,11 @@
-/* @keyframes colorchange {
-    0% {
-      color: #333;
-    }
-    50% {
-      color: #ff6f61;
-    }
-    100% {
-      color: #333;
-    }
-  } */
+.card-hover:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Increase the box-shadow */
+  transform: translateY(-10px); /* Increase the translateY */
+  transition: all 0.3s ease;
+}
+
+/* #carouselExampleControls{
+
+  margin-top:270px ;
+} */
+

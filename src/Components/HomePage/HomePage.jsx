@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Carousel } from 'bootstrap'; // Import Carousel from Bootstrap
+import './HomePage.css';
 
 export default function HomePage() {
+
+
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    const carouselInstance = new Carousel(carousel, {
+      interval: 4000, // Adjust as needed
+    });
+
+    return () => {
+      carouselInstance.dispose();
+    };
+  }, []);
+ 
     const cardDetails = [
         {
           imageSrc: '/images/quiz.png',
@@ -25,75 +44,96 @@ export default function HomePage() {
           title: 'Code Reviewer',
           text: 'Evaluate Code Effectively',
           link: '/code-reviewer'
+        },
+        {
+          imageSrc: '/images/Mock.png',
+          title: 'Mock Interview',
+          text: 'Prepare for Success',
+          link: '/code-reviewer'
+        },
+        {
+          imageSrc: '/images/Prompt.png',
+          title: 'Prompt Enhancer',
+          text: 'Elevate Your Conversations with Intelligent Suggestions',
+          link: '/code-reviewer'
         }
       ];
-
+     
   return (
-    <div className="container" style={{marginTop: '280px',}}>
-      <div className="row">
-        {cardDetails.map((card, index) => (
-          <div className="col-lg-3 col-md-6 mb-4" key={index}>
-            <div className="card h-100">
-              <img src={card.imageSrc} className="card-img-top" alt="Card" style={{height: '200px', objectFit: 'cover'}} />
-              <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{card.title}</h5>
-                <p className="card-text">{card.text}</p>
-                <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#2980b9',marginLeft:'30px',marginRight:'30px'}}>
+    <div id="carouselExampleControls" style={{marginTop: '280px',}} className="carousel slide" data-bs-ride="carousel" ref={carouselRef}>
+      <div className="carousel-inner">
+        <div className="carousel-item active">
+          <div className="container">
+            <div className="row justify-content-center">
+              {cardDetails.slice(0, 4).map((card, index) => (
+                <div className="col-lg-3 col-md-6 mb-4" key={index}>
+                  <div className="card h-100 card-hover">
+                    <img src={card.imageSrc} className="card-img-top" alt="Card" style={{ height: '300px', objectFit: 'cover' }} />
+                    <div className="card-body d-flex flex-column">
+                      <h5 className="card-title">{card.title}</h5>
+                      <p className="card-text">{card.text}</p>
+                      <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#2980b9',marginLeft:'30px',marginRight:'30px'}}>
                   Start
                 </a>
-              </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
+        </div>
+        <div className="carousel-item">
+          <div className="container">
+            <div className="row">
+              {cardDetails.slice(4).map((card, index) => (
+                <div className="col-lg-3 col-md-6 mb-4" key={index}>
+                  <div className="card h-100 card-hover">
+                    <img src={card.imageSrc} className="card-img-top" alt="Card" style={{ height: '300px', objectFit: 'cover' }} />
+                    <div className="card-body d-flex flex-column">
+                      <h5 className="card-title">{card.title}</h5>
+                      <p className="card-text">{card.text}</p>
+                      <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#2980b9',marginLeft:'30px',marginRight:'30px'}}>
+                  Start
+                </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-      {/* <div style={{marginTop:'20px',textAlign: 'center'}}>
-      <div style={{ fontSize: '40px',color: 333,letterSpacing: '1px',textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',animation: 'colorchange 10s infinite alternate'}}>Hello, 
-      How can I help you today?</div>
-      </div> */}
+      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
     </div>
     
-   
-    // <div className="container" style={{marginTop: '100px'}} >
+  
+    //-----------------------------------------------------------------------
+    // <div className="container" style={{marginTop: '280px',}}>
     //   <div className="row">
-    //     <div className="col-md-6">
-    //       <div className="row">
-    //         {cardDetails.slice(0, 2).map((card, index) => (
-    //           <div className="col-md-6 mb-4" key={index}> {/* Added mb-4 for margin bottom */}
-    //             <div className="card">
-    //               <img src={card.imageSrc} className="card-img-top" alt="Card" />
-    //               <div className="card-body">
-    //                 <h5 className="card-title">{card.title}</h5>
-    //                 <p className="card-text">{card.text}</p>
-    //                 <a href={card.link} className="btn btn-primary">
-    //                   Learn more
-    //                 </a>
-    //               </div>
-    //             </div>
+    //     {cardDetails.map((card, index) => (
+    //       <div className="col-lg-3 col-md-6 mb-4" key={index}>
+    //         <div className="card h-100">
+    //           <img src={card.imageSrc} className="card-img-top" alt="Card" style={{height: '200px', objectFit: 'cover'}} />
+    //           <div className="card-body d-flex flex-column">
+    //             <h5 className="card-title">{card.title}</h5>
+    //             <p className="card-text">{card.text}</p>
+                // <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#2980b9',marginLeft:'30px',marginRight:'30px'}}>
+                //   Start
+                // </a>
     //           </div>
-    //         ))}
+    //         </div>
     //       </div>
-    //     </div>
-    //     <div className="col-md-6">
-    //       <div className="row">
-    //         {cardDetails.slice(2, 4).map((card, index) => (
-    //           <div className="col-md-6 mb-4" key={index}> {/* Added mb-4 for margin bottom */}
-    //             <div className="card">
-    //               <img src={card.imageSrc} className="card-img-top" alt="Card" />
-    //               <div className="card-body">
-    //                 <h5 className="card-title">{card.title}</h5>
-    //                 <p className="card-text">{card.text}</p>
-    //                 <a href={card.link} className="btn btn-primary">
-    //                   Learn more
-    //                 </a>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         ))}
-    //       </div>
-    //     </div>
+    //     ))}
     //   </div>
     // </div>
-              
-           
-  )
+
+    //------------------------
+)
 }
