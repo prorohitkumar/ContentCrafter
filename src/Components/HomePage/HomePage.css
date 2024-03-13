@@ -12,15 +12,15 @@
 /* Reduce size of carousel control buttons */
 .carousel-control-prev, .carousel-control-next {
   font-size: 1rem; /* Adjust as needed */
-  width: 80px; /* Adjust width */
+  width: 90px; /* Adjust width */
   height: 40px; /* Adjust height */
 }
 
 /* Optional: Adjust position of control buttons */
 .carousel-control-prev {
-  left: 50px; /* Adjust left position */
+  left: 70px; /* Adjust left position */
 }
 
 .carousel-control-next {
-  right: 50px; /* Adjust right position */
+  right: 70px; /* Adjust right position */
 }
