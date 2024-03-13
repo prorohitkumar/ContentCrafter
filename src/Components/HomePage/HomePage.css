@@ -18,9 +18,9 @@
 
 /* Optional: Adjust position of control buttons */
 .carousel-control-prev {
-  left: -70px; /* Adjust left position */
+  left: 50px; /* Adjust left position */
 }
 
 .carousel-control-next {
-  right: -70px; /* Adjust right position */
+  right: 50px; /* Adjust right position */
 }
