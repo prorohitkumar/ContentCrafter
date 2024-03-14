@@ -470,7 +470,7 @@ function ITComponent(props) {
                   {errors[`toolsTechnologies${index}`]}
                 </div>
               </div>
-              <div className="level">
+              <div className="levell">
                 <div>
                   <label>Level</label>
                   <select

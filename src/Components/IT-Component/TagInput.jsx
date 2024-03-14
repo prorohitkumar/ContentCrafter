@@ -1,10 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './TagInput.css';
 
 function TagInput({ onTagsChange, initialTags = [], suggestions = [] }) {
   const [tags, setTags] = useState(initialTags);
   const [input, setInput] = useState('');
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+
+  const [showSuggestions, setShowSuggestions] = useState(true);
+  const tagInputRef = useRef(null);
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (tagInputRef.current && !tagInputRef.current.contains(event.target)) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+
+
+  const handleInputFocus = () => {
+    setFilteredSuggestions(suggestions)
+    setShowSuggestions(true);
+  };
 
   const updateTags = (newTags) => {
     setTags(newTags);
@@ -33,7 +57,7 @@ function TagInput({ onTagsChange, initialTags = [], suggestions = [] }) {
     } else {
       // Otherwise, filter suggestions based on the current input
       const filtered = suggestions.filter(suggestion =>
-        suggestion.toLowerCase().includes(userInput.toLowerCase())
+        suggestion.toLowerCase().startsWith(userInput.toLowerCase())
       );
       setFilteredSuggestions(filtered);
     }
@@ -52,11 +76,12 @@ function TagInput({ onTagsChange, initialTags = [], suggestions = [] }) {
   };
 
   const handleSuggestionClick = (suggestion) => {
+    console.log(suggestion)
     addTag(suggestion);
   };
 
   return (
-    <div className="tags-input-container">
+    <div className="tags-input-container" ref={tagInputRef}>
       <div className="tag-items">
         {tags.map((tag, index) => (
           <div key={index} className="tag-item">
@@ -74,16 +99,22 @@ function TagInput({ onTagsChange, initialTags = [], suggestions = [] }) {
         onKeyDown={handleInputKeyDown}
         placeholder="Type and hit enter or comma to add"
         className="tag-input"
+        onFocus={handleInputFocus}
+      // Add this
+
       />
-      {filteredSuggestions.length > 0 && (
+      {showSuggestions && filteredSuggestions.length > 0 && (
         <div className="suggestions-container">
           {filteredSuggestions.map((suggestion, index) => (
-            <div key={index} className="suggestion-tag" onClick={() => handleSuggestionClick(suggestion)}>
+            <div key={index} className="suggestion-tag"         // Add this
+              onClick={() => handleSuggestionClick(suggestion)}>
               {suggestion}
             </div>
           ))}
         </div>
+
       )}
+
     </div>
   );
 }
