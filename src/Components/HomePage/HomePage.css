@@ -4,6 +4,22 @@
   transition: all 0.3s ease;
 }
 
+/* Hover effect on card button */
+
+.custom-btn {
+  transition: all 0.3s ease;
+  background-color: #0061AF;
+  color: white;
+  border-color: #0061AF;
+}
+
+.custom-btn:hover {
+  background-color: #003d6b;
+  color: #fff;
+  border-color: #003d6b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
 
 /* Reduce size of carousel control buttons */
