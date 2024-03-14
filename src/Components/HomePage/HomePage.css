@@ -10,7 +10,7 @@
 .carousel-control-prev, .carousel-control-next {
   /* font-size: 1rem; Adjust as needed */
   width: 90px; /* Adjust width */
-  height: 50px; /* Adjust height */
+  height: 90px; /* Adjust height */
   background-color: white;
 }
 
@@ -22,14 +22,21 @@
   
 }
 
+.fontIcon{
+  height: 50px;
+  width: 50px;
+  
+  border-radius: 15px;
+}
+
 
 
 
 /* Optional: Adjust position of control buttons */
 .carousel-control-prev {
-  left: 70px; /*Adjust left position */
+  left: 100px; /*Adjust left position */
 }
 
 .carousel-control-next {
-  right: 70px; 
+  right: 100px; 
 }
