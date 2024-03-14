@@ -78,7 +78,7 @@ export default function HomePage() {
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">{card.title}</h5>
                       <p className="card-text">{card.text}</p>
-                      <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#2980b9',marginLeft:'30px',marginRight:'30px'}}>
+                      <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#0061af',marginLeft:'30px',marginRight:'30px'}}>
                   Start
                 </a>
                     </div>
@@ -98,7 +98,7 @@ export default function HomePage() {
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">{card.title}</h5>
                       <p className="card-text">{card.text}</p>
-                      <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#2980b9',marginLeft:'30px',marginRight:'30px'}}>
+                      <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#0061af',marginLeft:'30px',marginRight:'30px'}}>
                   Start
                 </a>
                     </div>
