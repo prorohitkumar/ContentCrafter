@@ -57,7 +57,7 @@ const SideNav = () => {
           {/* Updated onClick handler to toggleNav function */}
           {/* <span className="hamburger-icon" onClick={toggleNav}>&#9776;</span> */}
           {/* logo */}
-          {/* <img src="/images/logo2.png" alt="Stackroute Logo" style={{ width: '10%', height: 'auto' }} /> */}
+          <img src="/images/logo3.png" alt="Stackroute Logo" style={{ width: '10%', height: 'auto' }} />
           <a style={{textDecoration: 'none'}} href='/'><p>ContentCrafter</p> </a>
         </div>
         <div className='feedback-btn-container'>
