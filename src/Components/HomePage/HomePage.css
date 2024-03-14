@@ -21,7 +21,8 @@
 /* Increase size of carousel control icons */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  font-size: 6rem !important; /* Use !important to override */
+  font-size: 10rem !important; /* Use !important to override */
+  color: #000;
 }
 
 /* Optional: Adjust position of control buttons */
