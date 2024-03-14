@@ -56,6 +56,12 @@ export default function HomePage() {
           title: 'Prompt Enhancer',
           text: 'Elevate Your Conversations with Intelligent Suggestions',
           link: '/code-reviewer'
+        },
+        {
+          imageSrc: '/images/CodeGenerator.png',
+          title: 'Code Generator',
+          text: ' Empower Your Development Workflow',
+          link: '/code-reviewer'
         }
       ];
      
@@ -105,12 +111,13 @@ export default function HomePage() {
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style={{marginTop: '13%'}}>
         <span className="carousel-control-prev-icon" ></span>
-        {/* <span className="visually-hidden">Previous</span> */}
+        {/* <span>Previous</span> */}
       </button>
       <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style={{marginTop: '13%'}}>
-        <span className="carousel-control-next-icon" ></span>
+        <span className="carousel-control-next-icon"></span>
         {/* <span className="visually-hidden">Next</span> */}
       </button>
+        
     </div>
     
   

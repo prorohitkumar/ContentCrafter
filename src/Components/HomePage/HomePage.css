@@ -4,32 +4,32 @@
   transition: all 0.3s ease;
 }
 
-/* #carouselExampleControls{
 
-  margin-top:270px ;
-} */
 
 /* Reduce size of carousel control buttons */
 .carousel-control-prev, .carousel-control-next {
-  font-size: 1rem; /* Adjust as needed */
+  /* font-size: 1rem; Adjust as needed */
   width: 90px; /* Adjust width */
   height: 50px; /* Adjust height */
   background-color: white;
-  color: #000;
 }
 
 /* Increase size of carousel control icons */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  font-size: 10rem !important; /* Use !important to override */
-  color: #000;
+  font-size: 80px;
+  filter: invert(100%);
+  
 }
+
+
+
 
 /* Optional: Adjust position of control buttons */
 .carousel-control-prev {
-  left: 70px; /* Adjust left position */
+  left: 70px; /*Adjust left position */
 }
 
 .carousel-control-next {
-  right: 70px; /* Adjust right position */
+  right: 70px; 
 }
