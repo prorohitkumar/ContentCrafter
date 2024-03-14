@@ -74,7 +74,7 @@
   padding-left: 0;
   width: calc(100% - 8px); /* Adjust width as per padding */
   position: absolute;
-  z-index: 1000;
+  z-index: 95;
   background: white;
   width: 20px;
 }
