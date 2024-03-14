@@ -1,5 +1,5 @@
 .tags-input-container {
-  position: relative; /* Make container a positioning reference */
+  /* position: relative; Make container a positioning reference */
 
   display: flex;
   align-items: center; /* Align the tags and input inline */
@@ -101,7 +101,7 @@
   /* border: 1px solid #ddd; Border similar to the input field */
   border-radius: 4px; /* Rounded corners */
   padding: 4px; /* Padding inside the suggestions container */
-  position: absolute; /* Positioning relative to the parent */
+  position: absolute; 
   width: 100%; /* Match the width of the input field */
   /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); Optional: adds a subtle shadow */
   /* z-index: 10; Ensure it's above other content */
