@@ -1,11 +1,26 @@
-/* @keyframes colorchange {
-    0% {
-      color: #333;
-    }
-    50% {
-      color: #ff6f61;
-    }
-    100% {
-      color: #333;
-    }
-  } */
+.card-hover:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Increase the box-shadow */
+  transform: translateY(-10px); /* Increase the translateY */
+  transition: all 0.3s ease;
+}
+
+/* #carouselExampleControls{
+
+  margin-top:270px ;
+} */
+
+/* Reduce size of carousel control buttons */
+.carousel-control-prev, .carousel-control-next {
+  font-size: 1rem; /* Adjust as needed */
+  width: 90px; /* Adjust width */
+  height: 40px; /* Adjust height */
+}
+
+/* Optional: Adjust position of control buttons */
+.carousel-control-prev {
+  left: 70px; /* Adjust left position */
+}
+
+.carousel-control-next {
+  right: 70px; /* Adjust right position */
+}
