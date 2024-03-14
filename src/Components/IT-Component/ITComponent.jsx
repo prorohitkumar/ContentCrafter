@@ -509,8 +509,9 @@ function ITComponent(props) {
                   )}
                   {formData.length - 1 === index && (
                     <button
+
                       type="button"
-                      className="add-button"
+                      className="assessment-add-button"
                       onClick={handleAddRow}
                     >
                       +

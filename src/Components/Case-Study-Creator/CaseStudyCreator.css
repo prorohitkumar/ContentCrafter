@@ -2,6 +2,19 @@
   margin-top: 90px;
   margin-left: 75vh;
 }
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #fcfcfc; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #0061af; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #fcfcfc; /* creates padding around scroll thumb */
+}
 
 .form-p {
   width: 70%;
@@ -51,7 +64,7 @@ select {
 button {
   width: 150px;
   height: 35px;
-  background-color: #2980b9;
+  background-color: #0061af;
   color: white;
   justify-self: center;
   padding: 0;
@@ -69,7 +82,7 @@ button {
 
 .add-button {
   display: inline-block;
-  background-color: #2980b9;
+  background-color: #0061af;
   text-decoration: solid;
   max-width: 50px;
   padding: 0;
@@ -132,10 +145,19 @@ button:hover {
 }
 
 textarea {
-  width: 90%;
+  width: 98%;
 }
 
 .markdownResponse {
   width: 75%;
   margin: 10px auto;
+  max-width: 80%;
+  margin-left: 12%;
+  height: 500px;
+  padding: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  max-height: 500px;
 }
