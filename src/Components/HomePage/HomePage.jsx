@@ -12,7 +12,7 @@ export default function HomePage() {
   useEffect(() => {
     const carousel = carouselRef.current;
     const carouselInstance = new Carousel(carousel, {
-      interval: 4000, // Adjust as needed
+      interval: 7000, // Adjust as needed
     });
 
     return () => {
@@ -49,26 +49,29 @@ export default function HomePage() {
           imageSrc: '/images/Mock.png',
           title: 'Mock Interview',
           text: 'Prepare for Success',
-          link: '/code-reviewer'
+          link: '/mock-interview'
         },
         {
           imageSrc: '/images/Prompt.png',
           title: 'Prompt Enhancer',
           text: 'Elevate Your Conversations with Intelligent Suggestions',
-          link: '/code-reviewer'
+          link: '/prompt-enhancer'
         },
         {
           imageSrc: '/images/CodeGenerator.png',
           title: 'Code Generator',
           text: ' Empower Your Development Workflow',
-          link: '/code-reviewer'
+          link: '/code-generator'
+        },
+        {
+          imageSrc: '/images/ImageTranslate.png',
+          title: 'Image Translate',
+          text: 'Transforming Visuals',
+          link: '/image-translate'
         }
       ];
 
-      const indicatorStyle = {
-        color: 'black',      // Set color to black
-        marginTop: '20px',   // Add top margin
-      };
+     
      
   return (
   
@@ -123,18 +126,15 @@ export default function HomePage() {
         <span className="carousel-control-next-icon fontIcon"></span>
         {/* <span className="visually-hidden">Next</span> */}
       </button>
-      <ol className="carousel-indicators" style={indicatorStyle}> {/* Indicators */}
-        {cardDetails.map((_, index) => (
-          <li
-            key={index}
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide-to={index}
-            className={index === 0 ? 'active' : ''}
-          ></li>
-        ))}
+      
+      <ol className="carousel-indicators">
+        {/* Render only two indicators */}
+        <li data-bs-target="#carouselExampleControls" data-bs-slide-to="0" className="active"></li>
+        <li data-bs-target="#carouselExampleControls" data-bs-slide-to="1"></li>
       </ol>
-        
-    </div>
+     
+      </div>
+      
     
   
 )

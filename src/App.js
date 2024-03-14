@@ -10,6 +10,10 @@ import WorkInProgress from './Components/work-in-progress/WorkInProgress';
 import Login from './Components/Login/Login';
 import CaseStudyResponse from './Components/CaseStudyResponse/CaseStudyResponse';
 import HomePage from './Components/HomePage/HomePage';
+import MockInterview from './Components/Mock-Interview/MockInterview';
+import PromptEnhancer from './Components/Prompt-Enhancer/PromptEnhancer';
+import CodeGenerator from './Components/Code-Generator/CodeGenerator';
+import ImageTranslate from './Components/Image-Translate/ImageTranslate';
 
 function App() {
   // State to manage user authentication status
@@ -32,6 +36,10 @@ function App() {
                 <Route path='/code-reviewer' element={<CodeReviewer />} />
                 <Route path='/work-in-progress' element={<WorkInProgress />} />
                 <Route path='/assessment-output' element={<Output />} />
+                <Route path='/mock-interview' element={<MockInterview />} />
+                <Route path='/prompt-enhancer' element={<PromptEnhancer />} />
+                <Route path='/code-generator' element={<CodeGenerator />} />
+                <Route path='/image-translate' element={<ImageTranslate />} />
               </Routes>
             </div>
           </>
