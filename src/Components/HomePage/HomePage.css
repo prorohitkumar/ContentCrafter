@@ -13,7 +13,15 @@
 .carousel-control-prev, .carousel-control-next {
   font-size: 1rem; /* Adjust as needed */
   width: 90px; /* Adjust width */
-  height: 40px; /* Adjust height */
+  height: 50px; /* Adjust height */
+  background-color: white;
+  color: #000;
+}
+
+/* Increase size of carousel control icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  font-size: 6rem !important; /* Use !important to override */
 }
 
 /* Optional: Adjust position of control buttons */
