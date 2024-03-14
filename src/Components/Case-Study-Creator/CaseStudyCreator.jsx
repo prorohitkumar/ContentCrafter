@@ -108,7 +108,6 @@ const CaseStudyCreator = () => {
             <div className='form-cell-p '>
               <select
                 value={sector}
-                className='form-control'
                 onChange={(e) => setsector(e.target.value)}
                 required
               >
@@ -124,7 +123,6 @@ const CaseStudyCreator = () => {
             <div className='form-cell-p'>
               <select
                 value={vertical}
-                className='form-control'
                 onChange={(e) => setvertical(e.target.value)}
                 required
               >
@@ -139,7 +137,6 @@ const CaseStudyCreator = () => {
             <div className='form-cell-p'>
               <select
                 value={specialization}
-                className='form-control'
                 onChange={(e) => setspecialization(e.target.value)}
                 required
               >
@@ -169,7 +166,6 @@ const CaseStudyCreator = () => {
               </svg>{' '}
             </label>
             <input
-              className='form-control'
               type='text'
               value={trainingProgramType}
               onChange={(e) => settrainingProgramType(e.target.value)}
@@ -178,7 +174,10 @@ const CaseStudyCreator = () => {
           </div>
 
           <div className=''>
-            <label className='form-label'>
+            <label
+              className='form-label'
+              title='Enter a breif description of the scenario you want for the case study'
+            >
               Scenario Description{' '}
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -202,7 +201,7 @@ const CaseStudyCreator = () => {
           <div className='form-row-p'>
             <label
               className='form-label '
-              title='Enter the learning objectives'
+              title='Enter the learning objectives and required outcomes for the case study'
             >
               Learning Outcomes{' '}
               <svg
@@ -236,10 +235,10 @@ const CaseStudyCreator = () => {
             </ul>
 
             <input
-              className='form-control'
               type='text'
               value={objective}
               onChange={(e) => setobjective(e.target.value)}
+              placeholder='click on + icon for adding input'
             />
             <button
               type='button'
@@ -251,7 +250,10 @@ const CaseStudyCreator = () => {
           </div>
 
           <div className='form-row-p'>
-            <label className='form-label' title='Enter tools and technologies'>
+            <label
+              className='form-label'
+              title='Enter tools and technologies needed for this case study '
+            >
               Tools & Technologies{' '}
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -276,7 +278,6 @@ const CaseStudyCreator = () => {
             <div className='form-cell-p '>
               <select
                 value={difficulty}
-                className='form-control'
                 onChange={(e) => setdifficulty(e.target.value)}
                 required
               >
@@ -291,7 +292,7 @@ const CaseStudyCreator = () => {
             <div className='form-cell-p'>
               <input
                 type='number'
-                className='form-control'
+                min={1}
                 placeholder='Enter Duration (hrs)'
                 value={duration}
                 onChange={(e) => setDuration(e.target.value)}
@@ -301,6 +302,7 @@ const CaseStudyCreator = () => {
             <div className='form-cell-p '>
               <input
                 type='number'
+                min={1}
                 placeholder='Enter No. of Developers'
                 value={numberOfDevelopers}
                 onChange={(e) => setNumberOfDevelopers(e.target.value)}
@@ -312,7 +314,7 @@ const CaseStudyCreator = () => {
         </div>
 
         <div className={message.length > 0 ? 'gen-dwn-btn' : 'genbtn'}>
-          {message.length > 0 ? (
+          {message.length > 0 && (
             <button
               type='button'
               className='download-button'
@@ -320,8 +322,6 @@ const CaseStudyCreator = () => {
             >
               Download
             </button>
-          ) : (
-            <></>
           )}
           <button className='generate-button' type='submit'>
             Generate
