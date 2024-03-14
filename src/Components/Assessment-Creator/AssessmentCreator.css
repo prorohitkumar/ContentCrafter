@@ -21,7 +21,6 @@
   flex-direction: column; /* Align children vertically */
   max-width: 99%;
   padding: 20px;
-  margin: 0, auto;
   }
 
 .first {
