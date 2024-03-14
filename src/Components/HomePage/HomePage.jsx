@@ -64,6 +64,11 @@ export default function HomePage() {
           link: '/code-reviewer'
         }
       ];
+
+      const indicatorStyle = {
+        color: 'black',      // Set color to black
+        marginTop: '20px',   // Add top margin
+      };
      
   return (
   
@@ -111,37 +116,26 @@ export default function HomePage() {
         </div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style={{marginTop: '12%'}}>
-        <span className="carousel-control-prev-icon fontIcon" ></span>
+        <span className="carousel-control-prev-icon fontIcon"></span>
         {/* <span>Previous</span> */}
       </button>
       <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style={{marginTop: '12%'}}>
         <span className="carousel-control-next-icon fontIcon"></span>
         {/* <span className="visually-hidden">Next</span> */}
       </button>
+      <ol className="carousel-indicators" style={indicatorStyle}> {/* Indicators */}
+        {cardDetails.map((_, index) => (
+          <li
+            key={index}
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide-to={index}
+            className={index === 0 ? 'active' : ''}
+          ></li>
+        ))}
+      </ol>
         
     </div>
     
   
-    //-----------------------------------------------------------------------
-    // <div className="container" style={{marginTop: '280px',}}>
-    //   <div className="row">
-    //     {cardDetails.map((card, index) => (
-    //       <div className="col-lg-3 col-md-6 mb-4" key={index}>
-    //         <div className="card h-100">
-    //           <img src={card.imageSrc} className="card-img-top" alt="Card" style={{height: '200px', objectFit: 'cover'}} />
-    //           <div className="card-body d-flex flex-column">
-    //             <h5 className="card-title">{card.title}</h5>
-    //             <p className="card-text">{card.text}</p>
-                // <a href={card.link} className="btn btn-primary mt-auto" style={{backgroundColor: '#2980b9',marginLeft:'30px',marginRight:'30px'}}>
-                //   Start
-                // </a>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div>
-
-    //------------------------
 )
 }

@@ -25,11 +25,8 @@
 .fontIcon{
   height: 50px;
   width: 50px;
-  
   border-radius: 15px;
 }
-
-
 
 
 /* Optional: Adjust position of control buttons */
@@ -40,3 +37,11 @@
 .carousel-control-next {
   right: 100px; 
 }
+
+
+/* Indicators */
+
+/* .carousel-indicators {
+  color: black !important;
+  margin-top: 20px !important;
+} */
