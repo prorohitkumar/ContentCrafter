@@ -14,13 +14,22 @@ export default function AssessmentCreator() {
   const [isIt, setIsIt] = useState(false);
   const [isOther, setIsOther] = useState(false);
   const [subDomains, setSubDomains] = useState([]);
+  const assessmentNameRegex = /^[a-zA-Z][a-zA-Z0-9_ ]*$/;
+
+  
 
   // Validate assessment name
   const validateAssessmentName = (name) => {
+
     if (!name.trim()) {
       setAssessmentNameError('Assessment name is required.');
       return false; // Return false if validation fails
     }
+    if(!assessmentNameRegex.test(name)){
+    setAssessmentNameError('Please enter proper assessment name');
+          return false; // Return false if validation fails
+}
+
     setAssessmentNameError(''); // Clear error message if validation passes
     return true; // Return true if validation passes
   };
@@ -67,10 +76,11 @@ export default function AssessmentCreator() {
               className='textinput'
               type="text"
               name="assessmentName"
+              placeholder='Enter Assessment Name'
               value={assessmentName}
               onChange={handleAssessmentNameChange}
             />
-            {assessmentNameError && <div className="error">{assessmentNameError}</div>}
+            {assessmentNameError && <div className="assessment-error">{assessmentNameError}</div>}
           </div>
           <div className="Text">
             <label>Industry</label>

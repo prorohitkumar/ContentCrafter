@@ -93,7 +93,7 @@ function ITComponent(props) {
   const concepts = data.Sectors[0].concepts;
   const toolsTechnologies =
     data.Sectors[0].ToolsTechnologiesPlatformsFrameworks;
-  const levels = ["Beginner", "Intermediate", "Advanced"];
+  const levels = ["Easy", "Medium", "Hard"];
   const specializationsOptions = data.Sectors[0].Specializations;
 
   const validateField = (name, value, index) => {
@@ -113,10 +113,10 @@ function ITComponent(props) {
       //   if (!value || value.length === 0) errorMsg = 'At least one tool/technology is required';
       //   break;
       case "level":
-        if (!value) errorMsg = "Level is required";
+        if (!value) errorMsg = "Please select a difficulty level";
         break;
       case "noOfQuestions":
-        if (!value) errorMsg = "Number of questions is required";
+        if (!value) errorMsg = "Number of questions must be greater than 0";
         else if (isNaN(value) || parseInt(value) <= 0)
           errorMsg = "Enter a valid number of questions";
         break;
@@ -454,7 +454,7 @@ function ITComponent(props) {
                   Tools & Technologies
                   <span
                     className="info-icon"
-                    title="Select or enter Tools & technology for the questions"
+                    title="Select or enter tools & technologies for the questions"
                   >
                     i
                   </span>
@@ -471,7 +471,7 @@ function ITComponent(props) {
                 </div>
               </div>
               <div className="levell">
-                <div>
+                <div className="levell1">
                   <label>Level</label>
                   <select
                     name="level"
@@ -487,17 +487,20 @@ function ITComponent(props) {
                   </select>
                   <div className="error">{errors[`level${index}`]}</div>
                 </div>
-                <div>
+                <div className="levell1">
                   <label>No. of Questions</label>
                   <input
                     type="number"
+                    min={1}
+                    max={30}
                     name="noOfQuestions"
+            
                     value={data.noOfQuestions}
                     onChange={(event) => handleChange(index, event)}
                   />
                   <div className="error">{errors[`noOfQuestions${index}`]}</div>
                 </div>
-                <div>
+                <div className="levell2">
                   {formData.length !== 1 && (
                     <button
                       type="button"

@@ -85,13 +85,26 @@
 }
 
 .levell select {
-  width: 65%;
+  /* width: 65%; */
   min-width: 100px;
+  max-width: 160px;
   height: 35px;
   padding: 0;
   background-color: white;
-  margin-left: 4px;
+  margin-left: 5px;
   text-align: center;
+}
+
+.levell1{
+  display:inline-block;
+    width: 30%;
+    align-items: center;
+
+}
+.levell2{
+   text-align: end;
+    align-items: center;
+    width: 33%;
 }
 
 .levell select:hover,
@@ -102,7 +115,7 @@
 
 .levell input[type="number"] {
   background-color: white;
-  width:18%;
+  width:28%;
   height: 35px;
   margin-left: 4px;
 }

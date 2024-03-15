@@ -75,3 +75,13 @@
     width: 70%; /* Adjust input/select width to fill remaining space */
   }
 }
+
+.assessment-error{
+  margin-left: 10px;
+  color: #ff0000;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 0.875em;
+  font-weight: bold;
+  width: 100%;
+}
